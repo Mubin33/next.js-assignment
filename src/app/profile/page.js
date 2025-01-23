@@ -4,6 +4,17 @@ const page = async () => {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
+  // Fallback if user is null
+  if (!user) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <h1 className="text-4xl font-semibold text-center">
+          Please log in to access this page.
+        </h1>
+      </div>
+    );
+  }
+
   const { email, family_name, given_name, id, picture } = user;
 
   return (
@@ -17,7 +28,7 @@ const page = async () => {
             <img
               alt="profile"
               src={picture}
-              className="mx-auto object-cover rounded-full h-24 w-24  border-2 border-white "
+              className="mx-auto object-cover rounded-full h-24 w-24 border-2 border-white "
             />
           </a>
 
