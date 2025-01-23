@@ -21,7 +21,7 @@ const Page = () => {
 
   return (
     <div>
-      <h1>Blog Posts</h1>
+      <h1 className="text-4xl underline text-center font-semibold my-5">Blog Posts</h1>
       <div className="md:grid md:grid-cols-3 lg:grid-cols-5 gap-5">
         {allData.map((post) => <Link key={post.id} href={`/details/${post?.id}`}>
     <div className='p-2 border-[1px] h-full hover:shadow-xl cursor-pointer'>
