@@ -20,8 +20,8 @@ const BlogDetails = () => {
   if (!post) return <p>Loading...</p>;
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold">{post.title}</h1>
+    <div className="p-10">
+      <h1 className="text-3xl text-center font-bold">{post.title}</h1>
       <p className="mt-4">{post.body}</p>
     </div>
   );
